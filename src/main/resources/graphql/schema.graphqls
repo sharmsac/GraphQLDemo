@@ -1,0 +1,23 @@
+type Query {
+    getUser(id: ID!): User
+}
+
+type User {
+    id: ID
+    name: String
+    email: String
+    phone: String
+    address: Address
+    work: Work
+}
+
+type Address {
+    street: String
+    city: String
+    zip: String
+}
+
+type Work {
+    companyName: String
+    position: String
+}
