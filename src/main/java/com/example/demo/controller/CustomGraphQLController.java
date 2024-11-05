@@ -15,12 +15,8 @@ import java.util.Map;
 @RequestMapping("/api")
 public class CustomGraphQLController {
 
-    private final GraphQL graphQL;
-
     @Autowired
-    public CustomGraphQLController(GraphQL graphQL) {
-        this.graphQL = graphQL;
-    }
+    private GraphQL graphQL;
 
     // Accepts the raw GraphQL query as plain text in the request body
     @PostMapping("/tbd")

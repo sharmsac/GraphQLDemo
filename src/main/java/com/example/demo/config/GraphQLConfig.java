@@ -48,16 +48,14 @@ import java.io.InputStreamReader;
 @Configuration
 public class GraphQLConfig {
 
-    private final UserResolver userResolver;
-    private final AddressResolver addressResolver;
-    private final WorkResolver workResolver;
+    @Autowired
+    private UserResolver userResolver;
 
     @Autowired
-    public GraphQLConfig(UserResolver userResolver, AddressResolver addressResolver, WorkResolver workResolver) {
-        this.userResolver = userResolver;
-        this.addressResolver = addressResolver;
-        this.workResolver = workResolver;
-    }
+    private AddressResolver addressResolver;
+
+    @Autowired
+    private WorkResolver workResolver;
 
     @Bean
     public GraphQL graphQL() throws Exception {
